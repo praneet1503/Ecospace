@@ -25,4 +25,4 @@ A website that spreads awareness on sustainability.......
 ---
 [![](https://visitcount.itsvg.in/api?id=praneetrana&icon=2&color=0)](https://visitcount.itsvg.in)
 
-https://www.codewars.com/users/praneet15/badges/small
+[![](https://www.codewars.com/users/praneet15/badges/small)]
