@@ -122,3 +122,7 @@ li{
     padding-bottom: 7px;
    border-radius: 10px;
 }
+/*footer*/
+footer {
+    background-color: blueviolet;
+}
