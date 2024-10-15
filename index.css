@@ -124,5 +124,6 @@ li{
 }
 /*footer*/
 footer {
-    background-color: blueviolet;
+    background-color: rgba(132, 0, 255, 0.506);
+    text-align: center;
 }
