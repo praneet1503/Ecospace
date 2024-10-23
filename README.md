@@ -1,13 +1,13 @@
 # Ecospace
 A website that spreads awareness on sustainability.......
-For the link,You can access it here
-https://praneet3105.github.io/Ecospace/
+For the link,You can access it here:- <br>
+<a href="https://praneet3105.github.io/Ecospace/">Ecospace</a>
 
 
 
 # Owner
 # 💫 About Me:
-🔭 I’m currently working on a website (secret)😜!<br>👯 I dont collaborate for now but we can be friends tho <br>🤝 I’m looking for help with my website functionality<br>🌱 I’m currently learning html, css, javascript<br>💬 Ask me about anything you want ask !<br>⚡ Fun fact i love bubble teas 😜
+🔭 I’m currently working on a website (<a href="https://praneet3105.github.io/Ecospace/">Ecospace</a>)😜!<br>👯 I dont collaborate for now but we can be friends tho <br>🤝 I’m looking for help with my website functionality<br>🌱 I’m currently learning html, css, javascript<br>💬 Ask me about anything you want ask !<br>⚡ Fun fact i love bubble teas 😜
 
 
 ## 🌐 Socials:
