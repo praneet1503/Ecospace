@@ -1,6 +1,6 @@
 // Your OpenWeatherMap API key and city information
-const apiKey = '217c853cb167f26e23eb6d7a3699e276';
-const city = 'London,uk';
+const apiKey = '217c853cb167f26e23eb6d7a3699e276'; // Your API key
+const city = 'Dubai,ae'; // Change the city to Dubai, UAE
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 // Fetch weather data from OpenWeatherMap
