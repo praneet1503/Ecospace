@@ -3,23 +3,27 @@
     background-color: greenyellow;
     border-radius: 10px 10px 0 0; /* Rounds the top-left and top-right corners */
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     cursor: default;
     font-family: 'Courier New', Courier, monospace ;
     margin: 0; /* Reduces external spacing */
+    margin-bottom: 0px;
     font-size: xx-large;
 }
-.temperature {
-     background-color: rgba(172, 255, 47,0.5);
-     text-align: center;
-     cursor: default;
-     padding-top: 30px;
-     padding-bottom: 30px;
-     font-size: x-large;
-     border-radius: 0 0 10px 10px; /* Rounds the bottom-left and bottom-right corners */
-     margin: 0; /* Reduces external spacing */
-     margin-bottom: 20px; /* Adds 5px space at the bottom */
-
+.current-temperature{
+    background-color:rgba(172, 255, 47,0.5);
+    margin-top: 0px;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.loading{
+    background-color:rgba(172, 255, 47,0.5);
+    margin-top: 0px;
+    border-radius: 0px 0px 10px 10px;
+    text-align: center;
+    padding-bottom: 20px;
 }
 html {
     background-color: #87cefa;
