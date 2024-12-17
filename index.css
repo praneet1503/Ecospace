@@ -55,7 +55,6 @@ html {
     padding-top: 7px;
     padding-bottom: 7px;
     font-size: x-large;
-    border-radius: 10px 10px 0px 0px;
     margin: 0; /* Reduces external spacing */
 }
 .humidity {
@@ -113,7 +112,7 @@ li{
     text-align: center;
     background-color: aqua;
     border-radius: 10px;
-    padding-top: 7px;
+    padding-top: 5px;
     padding-bottom: 0px;
     margin-top: 10px;
 
@@ -144,6 +143,9 @@ nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 1rem;
+}
+.nav-b {
+    border-radius: 10px 10px 0px 0px;
 }
 nav a:hover {
     text-decoration: underline;
