@@ -169,6 +169,17 @@ footer {
     padding: 1rem 0;
     margin-top: 2rem;
 }
+/*cop28*/
+.cop-28-css {
+border-radius: 10px 10px 0px 0px;
+}
+.nav-cop-28 {
+    border-radius: 0px 0px 10px 10px;
+}
+.introduction {
+    background-color: aqua;
+    color: rgb(0, 0, 0);
+}
 /*footer*/
 .footer-main {
     background-color: rgba(132, 0, 255, 0.506);
