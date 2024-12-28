@@ -1,3 +1,4 @@
 .idx/dev.nix
 .idx/integrations.json
 
+.DS_Store
