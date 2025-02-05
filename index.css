@@ -1,3 +1,138 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Header styles */
+.main-header {
+    background: linear-gradient(135deg, #1e4d40, #2c7a7b);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #a0e4d7;
+}
+
+/* Hero section */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('nature-bg.jpg');
+    background-size: cover;
+    color: white;
+}
+
+/* Metrics grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.metric-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+}
+
+.metric-card summary {
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 5px;
+    background: #f8f9fa;
+}
+
+/* SDG Goals section */
+.sdg-goals-header {
+    text-align: center;
+    padding: 3rem 0;
+    background: #1e4d40;
+    color: white;
+}
+
+.details-1 {
+    background: white;
+    margin: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* COP28 section */
+.nav-cop-28 {
+    background: #2c7a7b;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-cop-28 a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-cop-28 a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Footer */
+.footer-main {
+    background: #1e4d40;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.footer-main a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.footer-main i {
+    color: #ff6b6b;
+}
+
 .title-header {
     text-align: center;
     background-color: greenyellow;

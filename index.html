@@ -2,23 +2,36 @@
 <html>
 
 <head>
-    <Title>
-        Ecospace
-    </Title>
+    <title>Ecospace</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="Ecospace.ico">
+<<<<<<< Updated upstream
     <h1 class="title-header">
         Ecospace
     </h1>
     <script src="api.js"></script>
+=======
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="api-1.js"></script>
+>>>>>>> Stashed changes
 </head>
 
 <body>
-    <h1 class="current-temperature">
-        Current Temperature
-    </h1>
-</body>
+    <!-- Create a proper header section -->
+    <header class="main-header">
+        <h1 class="title-header">Ecospace</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#sdg-goals-tag">SDG Goals</a></li>
+                <li><a href="#cop-28-tag">COP 28</a></li>
+            </ul>
+        </nav>
+    </header>
 
+<<<<<<< Updated upstream
 <body>
     <p class="loading" id="temperature">
         loading...
@@ -28,63 +41,72 @@
     <a href="#sdg-goals-tag">SDG Goals</a>
     <a href="#cop-28-tag">COP 28</a>
 </nav>
+=======
+    <!-- Create a hero section for temperature -->
+    <section class="hero-section">
+        <h1 class="current-temperature">Current Temperature</h1>
+        <p class="loading" id="temperature">loading...</p>
+    </section>
 
-<body>
-    <details class="air-purity">
-        <summary><strong>Air Purity:-94 AQI US</strong></summary>
-        <p>
-            Air purity refers to the quality or cleanliness of the air, indicating the absence of pollutants,
-            contaminants, or harmful substances. Pure air typically consists of a balanced mix of nitrogen (about 78%),
-            oxygen (about 21%), and trace gases like argon, carbon dioxide, and water vapor.
+    <!-- Wrap environmental metrics in a grid -->
+    <section class="metrics-grid">
+        <details class="metric-card air-purity">
+            <summary><i class="fas fa-wind"></i> <strong>Air Purity: -94 AQI US</strong></summary>
+            <p>
+                Air purity refers to the quality or cleanliness of the air, indicating the absence of pollutants,
+                contaminants, or harmful substances. Pure air typically consists of a balanced mix of nitrogen (about 78%),
+                oxygen (about 21%), and trace gases like argon, carbon dioxide, and water vapor.
 
-            Air purity is often measured in terms of the levels of pollutants such as particulate matter (PM2.5 and
-            PM10), carbon monoxide (CO), sulfur dioxide (SO₂), nitrogen oxides (NOx), ozone (O₃), volatile organic
-            compounds (VOCs), and other harmful gases.
+                Air purity is often measured in terms of the levels of pollutants such as particulate matter (PM2.5 and
+                PM10), carbon monoxide (CO), sulfur dioxide (SO₂), nitrogen oxides (NOx), ozone (O₃), volatile organic
+                compounds (VOCs), and other harmful gases.
+>>>>>>> Stashed changes
 
-            High air purity means the air has low concentrations of these pollutants, making it safer and healthier to
-            breathe.
-        </p>
-    </details>
-    <details class="air-pollution">
-        <summary><strong>Pollution:-6.4 PM2.5</strong></summary>
-        <p class="put-it-right">
-            Pollution is the introduction of harmful substances or contaminants into the environment, which causes
-            adverse effects on ecosystems, human health, and the natural balance of air, water, and land. These harmful
-            substances, known as pollutants, can be chemical, physical, or biological in nature.
-        </p>
-    </details>
-    <details class="humidity">
-        <summary class="center"><strong>Humidity:-68%</strong></summary>
-        <p>Humidity refers to the amount of water vapor present in the air. It is a key factor in weather and climate,
-            affecting how hot or cold we feel. There are three main types of humidity:</p>
+                High air purity means the air has low concentrations of these pollutants, making it safer and healthier to
+                breathe.
+            </p>
+        </details>
+        <details class="metric-card air-pollution">
+            <summary><i class="fas fa-smog"></i> <strong>Pollution: -6.4 PM2.5</strong></summary>
+            <p class="put-it-right">
+                Pollution is the introduction of harmful substances or contaminants into the environment, which causes
+                adverse effects on ecosystems, human health, and the natural balance of air, water, and land. These harmful
+                substances, known as pollutants, can be chemical, physical, or biological in nature.
+            </p>
+        </details>
+        <details class="metric-card humidity">
+            <summary><i class="fas fa-tint"></i> <strong>Humidity: -68%</strong></summary>
+            <p>Humidity refers to the amount of water vapor present in the air. It is a key factor in weather and climate,
+                affecting how hot or cold we feel. There are three main types of humidity:</p>
 
-        <ul>
-            <li><strong>Absolute Humidity:</strong> The total mass of water vapor in a given volume of air, usually
-                measured in grams of water per cubic meter of air.</li>
-            <li><strong>Relative Humidity:</strong> The percentage of water vapor present in the air compared to the
-                maximum amount the air can hold at a specific temperature. Higher relative humidity makes the air feel
-                warmer than it actually is.</li>
-            <li><strong>Specific Humidity:</strong> The ratio of the mass of water vapor to the total mass of air
-                (including the water vapor).</li>
-        </ul>
+            <ul>
+                <li><strong>Absolute Humidity:</strong> The total mass of water vapor in a given volume of air, usually
+                    measured in grams of water per cubic meter of air.</li>
+                <li><strong>Relative Humidity:</strong> The percentage of water vapor present in the air compared to the
+                    maximum amount the air can hold at a specific temperature. Higher relative humidity makes the air feel
+                    warmer than it actually is.</li>
+                <li><strong>Specific Humidity:</strong> The ratio of the mass of water vapor to the total mass of air
+                    (including the water vapor).</li>
+            </ul>
 
-        <p>Humidity affects everything from weather patterns to human comfort, with high humidity making it feel hotter,
-            and low humidity making it feel cooler.</p>
-    </details>
+            <p>Humidity affects everything from weather patterns to human comfort, with high humidity making it feel hotter,
+                and low humidity making it feel cooler.</p>
+        </details>
+    </section>
 
     <details class="extra-topic">
         <summary><strong>How many trees have you planted?</strong></summary>
         <p class="put-it-right">
-            Planting trees is one of the simplest yet most impactful ways we can help our planet. Trees are nature’s air
+            Planting trees is one of the simplest yet most impactful ways we can help our planet. Trees are nature's air
             purifiers—they absorb harmful carbon dioxide, release oxygen, and create a healthier environment for all
-            living beings. By planting more trees, you’re not only combating climate change but also helping to reduce
+            living beings. By planting more trees, you're not only combating climate change but also helping to reduce
             air pollution, prevent soil erosion, and provide homes for countless species of wildlife. A single tree can
-            make a difference, and together, we can create forests that will thrive for generations. Let’s grow a
+            make a difference, and together, we can create forests that will thrive for generations. Let's grow a
             greener, healthier future—one tree at a time. Your contribution can make the world a better place!</p>
     </details>
     <details class="extra-topic">
         <summary><strong>
-                UV Index:- 1
+                UV Index: 1
             </strong></summary>
         <p class="put-it-right">
             Knowing the UV index value helps you to better plan your outdoor stay. Protective measures such as sunscreen
@@ -120,7 +142,7 @@
         </p>
     </details>
     <details class="extra-topic">
-        <summary><strong>Precipitation:-1%</strong></summary>
+        <summary><strong>Precipitation: -1%</strong></summary>
         <p class="put-it-right">
             Precipitation is any form of water, such as rain, snow, sleet, or hail, that falls from clouds to the
             Earth's surface.
@@ -133,195 +155,195 @@
             trillion trees in the world.
         </p>
     </details>
-    <details class="wind">
-        <summary><strong>Wind:-16km/h</strong></summary>
+    <details class="metric-card wind">
+        <summary><i class="fas fa-wind"></i> <strong>Wind: 16km/h</strong></summary>
         <p class="put-it-right">
             The wind expected to head on north at 16km/h.That is a normal speed of wind,No chance of Hurricanes.
         </p>
     </details>
-</body>
 
-<header class="sdg-goals-header" id="sdg-goals-tag">
-    <h1>SDG GOALS</h1>
-</header>
+    <header class="sdg-goals-header" id="sdg-goals-tag">
+        <h1>SDG GOALS</h1>
+    </header>
 
-<body>
-    <details class="details-1" id="goal1">
-        <summary>Goal-1 No poverty </summary>
-        <p>
-            <em> End poverty in all its forms everywhere<br></em>
-            <strong>7 targets <br>
-                132 events<br>
-                50 publications<br>
-                1442 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-2 Zero Hunger</summary>
-        <p>
-            <em> End hunger, achieve food security and improved nutrition and promote sustainable agriculture<br></em>
-            <strong>8 targets <br>
-                115 events<br>
-                18 publications<br>
-                1372 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-3 Good health and Well-being</summary>
-        <p>
-            <em>Ensure healthy lives and promote well-being for all at all ages<br></em>
-            <strong>13 targets <br>
-                56 events<br>
-                48 publications<br>
-                1289 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-4 Quality Education</summary>
-        <p>
-            <em>Ensure inclusive and equitable quality education and promote lifelong learning opportunities for
-                all<br></em>
-            <strong>10 targets <br>
-                71 events<br>
-                12 publications<br>
-                1823 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-5 Gender Equality </summary>
-        <p>
-            <em>Achieve gender equality and empower all women and girls<br></em>
-            <strong>9 targets <br>
-                92 events<br>
-                47 publications<br>
-                1671 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-6 Clean Water and Sanitation </summary>
-        <p>
-            <em>Ensure availability and sustainable management of water and sanitation for all<br></em>
-            <strong>8 targets <br>
-                297 events<br>
-                37 publications<br>
-                1825 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-7 Affordable and clean energy </summary>
-        <p>
-            <em>Ensure access to affordable, reliable, sustainable and modern energy for all<br></em>
-            <strong>5 targets <br>
-                84 events<br>
-                46 publications<br>
-                1050 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-8 Decent Work and Economic Growth </summary>
-        <p>
-            <em>Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent
-                work for all<br></em>
-            <strong>12 targets <br>
-                110 events<br>
-                49 publications<br>
-                1939 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-9 Industry,Innovation and Infrastructure </summary>
-        <p>
-            <em>Build resilient infrastructure, promote inclusive and sustainable industrialization and foster
-                innovation<br></em>
-            <strong>8 targets <br>
-                114 events<br>
-                18 publications<br>
-                1051 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-10 Reduced Inequalities </summary>
-        <p>
-            <em>Reduce inequality within and among countries<br></em>
-            <strong>10 targets <br>
-                92 events<br>
-                15 publications<br>
-                998 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-11 Sustainable cities and communities</summary>
-        <p>
-            <em>Make cities and human settlements inclusive, safe, resilient and sustainable<br></em>
-            <strong>10 targets <br>
-                119 events<br>
-                23 publications<br>
-                1241 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-12 Responsible Consumption and Production</summary>
-        <p>
-            <em>Ensure sustainable consumption and production patterns<br></em>
-            <strong>11 targets <br>
-                53 events<br>
-                19 publications<br>
-                1630 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-13 Climate Action</summary>
-        <p>
-            <em>Take urgent action to combat climate change and its impacts<br></em>
-            <strong>5 targets <br>
-                79 events<br>
-                39 publications<br>
-                2150 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-14 Life below Water</summary>
-        <p>
-            <em>Conserve and sustainably use the oceans, seas and marine resources for sustainable development<br></em>
-            <strong>10 targets <br>
-                110 events<br>
-                43 publications<br>
-                2861 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-15 Life on Land</summary>
-        <p>
-            <em>Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests,
-                combat desertification, and halt and reverse land degradation and halt biodiversity loss<br></em>
-            <strong>12 targets <br>
-                54 events<br>
-                35 publications<br>
-                1319 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-16 Peace,Justice and Strong Institutions</summary>
-        <p>
-            <em>Promote peaceful and inclusive societies for sustainable development, provide access to justice for all
-                and build effective, accountable and inclusive institutions at all levels<br></em>
-            <strong>12 targets <br>
-                74 events<br>
-                15 publications<br>
-                1043 actions</strong>
-        </p>
-    </details>
-    <details class="details-1">
-        <summary>Goal-17 Partnerships for the Goals</summary>
-        <p>
-            <em>Strengthen the means of implementation and revitalize the Global Partnership for Sustainable
-                Development<br></em>
-            <strong>19 targets <br>
-                302 events<br>
-                79 publications<br>
-                2207 actions</strong>
-        </p>
-    </details>
+    <body>
+        <details class="details-1" id="goal1">
+            <summary>Goal-1 No poverty </summary>
+            <p>
+                <em> End poverty in all its forms everywhere<br></em>
+                <strong>7 targets <br>
+                    132 events<br>
+                    50 publications<br>
+                    1442 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-2 Zero Hunger</summary>
+            <p>
+                <em> End hunger, achieve food security and improved nutrition and promote sustainable agriculture<br></em>
+                <strong>8 targets <br>
+                    115 events<br>
+                    18 publications<br>
+                    1372 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-3 Good health and Well-being</summary>
+            <p>
+                <em>Ensure healthy lives and promote well-being for all at all ages<br></em>
+                <strong>13 targets <br>
+                    56 events<br>
+                    48 publications<br>
+                    1289 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-4 Quality Education</summary>
+            <p>
+                <em>Ensure inclusive and equitable quality education and promote lifelong learning opportunities for
+                    all<br></em>
+                <strong>10 targets <br>
+                    71 events<br>
+                    12 publications<br>
+                    1823 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-5 Gender Equality </summary>
+            <p>
+                <em>Achieve gender equality and empower all women and girls<br></em>
+                <strong>9 targets <br>
+                    92 events<br>
+                    47 publications<br>
+                    1671 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-6 Clean Water and Sanitation </summary>
+            <p>
+                <em>Ensure availability and sustainable management of water and sanitation for all<br></em>
+                <strong>8 targets <br>
+                    297 events<br>
+                    37 publications<br>
+                    1825 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-7 Affordable and clean energy </summary>
+            <p>
+                <em>Ensure access to affordable, reliable, sustainable and modern energy for all<br></em>
+                <strong>5 targets <br>
+                    84 events<br>
+                    46 publications<br>
+                    1050 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-8 Decent Work and Economic Growth </summary>
+            <p>
+                <em>Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent
+                    work for all<br></em>
+                <strong>12 targets <br>
+                    110 events<br>
+                    49 publications<br>
+                    1939 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-9 Industry,Innovation and Infrastructure </summary>
+            <p>
+                <em>Build resilient infrastructure, promote inclusive and sustainable industrialization and foster
+                    innovation<br></em>
+                <strong>8 targets <br>
+                    114 events<br>
+                    18 publications<br>
+                    1051 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-10 Reduced Inequalities </summary>
+            <p>
+                <em>Reduce inequality within and among countries<br></em>
+                <strong>10 targets <br>
+                    92 events<br>
+                    15 publications<br>
+                    998 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-11 Sustainable cities and communities</summary>
+            <p>
+                <em>Make cities and human settlements inclusive, safe, resilient and sustainable<br></em>
+                <strong>10 targets <br>
+                    119 events<br>
+                    23 publications<br>
+                    1241 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-12 Responsible Consumption and Production</summary>
+            <p>
+                <em>Ensure sustainable consumption and production patterns<br></em>
+                <strong>11 targets <br>
+                    53 events<br>
+                    19 publications<br>
+                    1630 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-13 Climate Action</summary>
+            <p>
+                <em>Take urgent action to combat climate change and its impacts<br></em>
+                <strong>5 targets <br>
+                    79 events<br>
+                    39 publications<br>
+                    2150 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-14 Life below Water</summary>
+            <p>
+                <em>Conserve and sustainably use the oceans, seas and marine resources for sustainable development<br></em>
+                <strong>10 targets <br>
+                    110 events<br>
+                    43 publications<br>
+                    2861 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-15 Life on Land</summary>
+            <p>
+                <em>Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests,
+                    combat desertification, and halt and reverse land degradation and halt biodiversity loss<br></em>
+                <strong>12 targets <br>
+                    54 events<br>
+                    35 publications<br>
+                    1319 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-16 Peace,Justice and Strong Institutions</summary>
+            <p>
+                <em>Promote peaceful and inclusive societies for sustainable development, provide access to justice for all
+                    and build effective, accountable and inclusive institutions at all levels<br></em>
+                <strong>12 targets <br>
+                    74 events<br>
+                    15 publications<br>
+                    1043 actions</strong>
+            </p>
+        </details>
+        <details class="details-1">
+            <summary>Goal-17 Partnerships for the Goals</summary>
+            <p>
+                <em>Strengthen the means of implementation and revitalize the Global Partnership for Sustainable
+                    Development<br></em>
+                <strong>19 targets <br>
+                    302 events<br>
+                    79 publications<br>
+                    2207 actions</strong>
+            </p>
+        </details>
+    </body>
 
     <header class="cop-28-css"id="cop-28-tag">
         <h1>COP28 Climate Conference</h1>
@@ -377,13 +399,14 @@
     </div>
 </body>
 
-
+<!-- Update footer -->
 <footer class="footer-main">
-    <p class="footer-1">
-        Created by Praneet Nandan Rana with love♥️
-        <a href="mailto:praneetnrana@gmail.com">Send Email</a>
-    </p>
-
+    <div class="footer-content">
+        <p class="footer-1">
+            Created with <i class="fas fa-heart"></i> by Praneet Nandan Rana
+            <a href="mailto:praneetnrana@gmail.com"><i class="fas fa-envelope"></i> Contact</a>
+        </p>
+    </div>
 </footer>
 
 </html>
