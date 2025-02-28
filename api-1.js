@@ -1,4 +1,4 @@
-const apiKey = // #addyourapikeyhere; OpenWeatherMap API Key
+const apiKey = "API_KEY" ;// add your OpenWeatherMap API Key here// 
 const city = "dubai,UAE"; // Replace with your desired city
 const units = "metric"; // Use "metric" for Celsius, "imperial" for Fahrenheit
 
