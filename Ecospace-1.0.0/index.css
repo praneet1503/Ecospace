@@ -1,0 +1,143 @@
+.title-header {
+    text-align: center;
+    background-color: greenyellow;
+    border-radius: 10px 10px 0 0; /* Rounds the top-left and top-right corners */
+    padding-top: 10px;
+    padding-bottom: 0px;
+    cursor: default;
+    font-family: 'Courier New', Courier, monospace ;
+    margin: 0; /* Reduces external spacing */
+    margin-bottom: 0px;
+    font-size: xx-large;
+}
+.current-temperature{
+    background-color:rgba(172, 255, 47,0.5);
+    margin-top: 0px;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+.loading{
+    background-color:rgba(172, 255, 47,0.5);
+    margin-top: 0px;
+    border-radius: 0px 0px 10px 10px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+html {
+    background-color: #87cefa;
+}
+.air-quality-index {
+    background-color: rgb(172, 255, 47);
+    text-align: center;
+    cursor: default;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: x-large;
+    border-radius: 20px;
+    margin-bottom: 10px; /* Adds 5px space at the bottom */
+}
+.air-pollution {
+    background-color: rgb(172, 255, 47);
+    padding-left: 10px;
+    cursor: default;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: x-large;
+    /*border-radius: 20px;*/
+    margin: 0; /* Reduces external spacing */
+}
+.air-purity {
+    background-color: rgb(172, 255, 47);
+    text-align: center;
+    cursor: default;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: x-large;
+    border-radius: 10px 10px 0px 0px;
+    margin: 0; /* Reduces external spacing */
+}
+.humidity {
+    background-color: rgb(172, 255, 47);
+    text-align: left;
+    cursor: default;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    font-size: x-large;
+   /*border-radius: 20px;*/
+    margin: 0; /* Reduces external spacing */
+}
+.extra-topic {
+    background-color: rgb(172, 255, 47);
+    /*text-align: center;*/
+    cursor: default;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    font-size: x-large;
+   /*border-radius: 20px;*/
+    margin: 0; /* Reduces external spacing */
+}
+.wind {
+    background-color: rgb(172, 255, 47);
+    padding-left: 10px;
+    cursor: default;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: x-large;
+   border-radius: 0 0 10px 10px;
+    margin: 0; /* Reduces external spacing */
+}
+h2,h1,h3,h4,h5,details {
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+.put-it-right {
+    text-align: left;
+    padding-left: 10px;
+
+}
+.air-purity {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+li{
+    text-align: left;
+}
+/* SDG GOALS*/
+.sdg-goals-header{
+    text-align: center;
+    background-color: aqua;
+    border-radius: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-top: 10px;
+
+}
+.details-1{ 
+    background-color: rgba(255, 192, 203, 0.876);
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+   border-radius: 10px;
+}
+/*footer*/
+.footer-main {
+    background-color: rgba(132, 0, 255, 0.506);
+    text-align: center;
+    border-radius: 10px;
+}
+.footer-1{
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-size: x-large;
+
+}
+.footer-2{
+    font-family: 'Courier New', Courier, monospace;
+    
+}
