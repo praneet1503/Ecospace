@@ -1,0 +1,24 @@
+/* Ecospace Theme (copy) - green / blue / white palette with subtle animations */
+/* Same as root theme file - keeps both folders consistent */
+:root{--eco-green:#2ecc71;--eco-blue:#1e88e5;--eco-white:#ffffff;--glass:rgba(255,255,255,0.08);--muted:rgba(255,255,255,0.85)}
+html,body{height:100%}
+body{margin:0;font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#03363d;background:linear-gradient(120deg,#e6fbf4 0%,#eaf6ff 50%,#f6ffff 100%);background-size:400% 400%;animation:ecoGradient 12s ease-in-out infinite;position:relative;-webkit-font-smoothing:antialiased}
+@keyframes ecoGradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+body::before,body::after{content:'';position:fixed;border-radius:50%;opacity:.12;filter:blur(40px);pointer-events:none;z-index:0}
+body::before{width:360px;height:360px;left:-80px;top:-60px;background:radial-gradient(circle at 20% 20%,var(--eco-green),transparent 40%);animation:floatLeft 8s ease-in-out infinite}
+body::after{width:420px;height:420px;right:-100px;bottom:-80px;background:radial-gradient(circle at 80% 80%,var(--eco-blue),transparent 40%);animation:floatRight 10s ease-in-out infinite}
+@keyframes floatLeft{0%{transform:translateY(0) translateX(0) rotate(0deg)}50%{transform:translateY(18px) translateX(8px) rotate(6deg)}100%{transform:translateY(0) translateX(0) rotate(0deg)}}
+@keyframes floatRight{0%{transform:translateY(0) translateX(0) rotate(0deg)}50%{transform:translateY(-14px) translateX(-6px) rotate(-4deg)}100%{transform:translateY(0) translateX(0) rotate(0deg)}}
+header,.main-header,.title-header{position:relative;z-index:2;background:linear-gradient(90deg,rgba(255,255,255,0.06),rgba(255,255,255,0.12));border-bottom:1px solid rgba(3,54,61,0.06);color:var(--eco-blue)}
+.title-header{background:linear-gradient(90deg,var(--eco-green),var(--eco-blue));color:var(--eco-white)!important;padding:14px 18px;border-radius:12px;box-shadow:0 6px 18px rgba(3,54,61,0.12);text-align:center;font-weight:700;letter-spacing:.6px}
+.current-temperature,.loading,.air-purity,.air-pollution,.humidity,.extra-topic,.wind,.air-quality-index{position:relative;z-index:2;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85));border-left:4px solid var(--eco-green);padding:14px 16px;margin:10px 16px;border-radius:10px;box-shadow:0 6px 18px rgba(3,54,61,0.06);transition:transform 300ms cubic-bezier(.2,.9,.2,1),box-shadow 300ms}
+.current-temperature:hover,.loading:hover,.metric-card:hover{transform:translateY(-6px);box-shadow:0 18px 30px rgba(3,54,61,0.12)}
+details[open]>summary{color:var(--eco-blue)}
+summary{cursor:pointer;font-weight:600;padding:8px 10px;border-radius:8px;transition:background 220ms,color 220ms,transform 220ms;background:linear-gradient(180deg,rgba(30,136,229,0.06),rgba(46,204,113,0.02))}
+summary:hover{background:linear-gradient(90deg,rgba(46,204,113,0.12),rgba(30,136,229,0.12));transform:translateY(-3px)}
+.nav-cop-28 a,.main-nav a,li a{color:var(--eco-blue);text-decoration:none;padding:8px 12px;border-radius:8px;transition:background 200ms,color 200ms,transform 160ms;display:inline-block}
+.nav-cop-28 a:hover,.main-nav a:hover,li a:hover{background:rgba(30,136,229,0.08);color:#063746;transform:translateY(-3px)}
+.btn-eco{display:inline-block;background:linear-gradient(90deg,var(--eco-green),var(--eco-blue));color:var(--eco-white);padding:8px 14px;border-radius:999px;box-shadow:0 8px 20px rgba(30,136,229,0.12);border:none;cursor:pointer;transition:transform 220ms,box-shadow 220ms}
+.btn-eco:active{transform:translateY(1px)}.btn-eco:hover{transform:translateY(-4px);box-shadow:0 22px 36px rgba(3,54,61,0.14)}
+section,.details-1,details,.metric-card{animation:ecoFadeUp 520ms ease both}@keyframes ecoFadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}*{position:relative;z-index:1}
+@media (max-width:720px){.title-header{font-size:1.05rem;padding:10px}.current-temperature,.loading{margin:8px}}
