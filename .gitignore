@@ -115,3 +115,10 @@ logs
 
 # Turbo
 .turbo
+
+
+# extra 
+.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
