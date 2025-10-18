@@ -46,8 +46,7 @@ body {
 .hero-section {
     text-align: center;
     padding: 4rem 2rem;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('nature-bg.jpg');
-    background-size: cover;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
     color: white;
 }
 

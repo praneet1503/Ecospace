@@ -1,0 +1,24 @@
+{
+  "name": "ecospace",
+  "version": "1.0.0",
+  "description": "A website that spreads awareness on sustainability",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^15.0.0"
+  },
+  "keywords": ["sustainability", "environment", "nextjs"],
+  "author": "Praneet Nandan Rana",
+  "license": "MIT"
+}
