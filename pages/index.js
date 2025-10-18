@@ -3,15 +3,26 @@ import { useEffect } from 'react'
 
 export default function Home() {
   useEffect(() => {
-    // Load the API script
-    const script = document.createElement('script')
-    script.src = '/api.js'
-    script.async = true
-    document.body.appendChild(script)
+    const apiKey = "217c853cb167f26e23eb6d7a3699e276";
+    const city = "dubai,UAE";
+    const units = "metric";
 
-    return () => {
-      document.body.removeChild(script)
+    async function fetchTemperature() {
+      try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`);
+        const data = await response.json();
+        if (data.main && data.main.temp) {
+          document.getElementById("temperature").innerText = `${data.main.temp}°C`;
+        } else {
+          document.getElementById("temperature").innerText = "Unable to fetch temperature.";
+        }
+      } catch (error) {
+        document.getElementById("temperature").innerText = "Error fetching data.";
+        console.error(error);
+      }
     }
+
+    fetchTemperature();
   }, [])
 
   return (
@@ -97,15 +108,15 @@ export default function Home() {
           Knowing the UV index value helps you to better plan your outdoor stay. Protective measures such as sunscreen
           and sunglasses are recommended when the UV index value is high. Staying in the shade and wearing suitable
           clothing with UV protection can also help to avoid health damage such as sunburn or even dangerous skin
-          cancer.<br />
-          <ul>
-            <li><strong>0-2<br />low:</strong> no protective measures necessary.<br /></li>
-            <li><strong>3-5<br />moderate:</strong> protection necessary. During midday hours, seek shade, wear appropriate clothing, hat and sunglasses, use sunscreen with sufficient sun protection factor for uncovered skin.<br /></li>
-            <li><strong>6-7<br />high:</strong> protection necessary. During midday hours, seek shade, wear appropriate clothing, hat and sunglasses, use sunscreen with sufficient sun protection factor for uncovered skin.<br /></li>
-            <li><strong>8-10<br />very high:</strong> special protection necessary. Avoid being outdoors at midday. If this is not possible, seek shade. Wear sunglasses, appropriate clothing and a hat with a wide brim. Apply sun cream with a high sun protection factor.<br /></li>
-            <li><strong>11-12<br />extreme:</strong> special protection necessary. Avoid being outdoors at midday. If this is not possible, seek shade. Wear sunglasses, appropriate clothing and a hat with a wide brim. Apply sun cream with a high sun protection factor.<br /></li>
-          </ul>
+          cancer.
         </p>
+        <ul>
+          <li><strong>0-2<br />low:</strong> no protective measures necessary.<br /></li>
+          <li><strong>3-5<br />moderate:</strong> protection necessary. During midday hours, seek shade, wear appropriate clothing, hat and sunglasses, use sunscreen with sufficient sun protection factor for uncovered skin.<br /></li>
+          <li><strong>6-7<br />high:</strong> protection necessary. During midday hours, seek shade, wear appropriate clothing, hat and sunglasses, use sunscreen with sufficient sun protection factor for uncovered skin.<br /></li>
+          <li><strong>8-10<br />very high:</strong> special protection necessary. Avoid being outdoors at midday. If this is not possible, seek shade. Wear sunglasses, appropriate clothing and a hat with a wide brim. Apply sun cream with a high sun protection factor.<br /></li>
+          <li><strong>11-12<br />extreme:</strong> special protection necessary. Avoid being outdoors at midday. If this is not possible, seek shade. Wear sunglasses, appropriate clothing and a hat with a wide brim. Apply sun cream with a high sun protection factor.<br /></li>
+        </ul>
       </details>
       <details>
         <summary><strong>Precipitation: -1%</strong></summary>
