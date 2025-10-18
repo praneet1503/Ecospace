@@ -315,6 +315,7 @@ export default function Home() {
           <p>
             Created with <i className="fas fa-heart"></i> by Praneet Nandan Rana
             <a href="mailto:praneetnrana@gmail.com"><i className="fas fa-envelope"></i> Contact</a>
+            <button className="btn-eco">Ecospace v1</button>
           </p>
         </div>
       </footer>
