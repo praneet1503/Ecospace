@@ -4,7 +4,7 @@
   "description": "A website that spreads awareness on sustainability",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
