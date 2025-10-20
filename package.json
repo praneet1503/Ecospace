@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
     "next": "^15.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
@@ -18,7 +19,11 @@
     "eslint": "^8.0.0",
     "eslint-config-next": "^15.0.0"
   },
-  "keywords": ["sustainability", "environment", "nextjs"],
+  "keywords": [
+    "sustainability",
+    "environment",
+    "nextjs"
+  ],
   "author": "Praneet Nandan Rana",
   "license": "MIT"
 }
