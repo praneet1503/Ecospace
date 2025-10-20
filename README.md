@@ -37,3 +37,8 @@ Customizing colors
 Notes
 - The theme is intentionally lightweight and uses no external libraries.
 - If you want the theme to override more styles, consider moving the link after other CSS files or use more specific selectors.
+
+Vercel Analytics
+- This project includes Vercel Analytics via the `@vercel/analytics` package and the `Analytics` component is mounted in `pages/_app.js`.
+- To view analytics, deploy the site to Vercel and enable Analytics in your Vercel project dashboard (Analytics are not visible in local dev by default).
+- To disable analytics locally or in production, remove the `Analytics` import and component from `pages/_app.js` or control it via an environment variable in your deployment.
