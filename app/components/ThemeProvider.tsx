@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-
-export default function ThemeProvider({ children }: any) {
+import React from 'react'
+export default function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState('light')
   const [mounted, setMounted] = useState(false)
 
