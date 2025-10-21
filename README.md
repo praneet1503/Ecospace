@@ -2,7 +2,7 @@
 
 A modern, responsive, and visually appealing educational website about sustainability, climate action, and environmental awareness, inspired by **NASA Climate Kids**, **Earth.org**, and **Google Weather UI**.
 
-**Live Demo:** [Ecospace on Vercel](ecospace-eosin.vercel.app)
+**Live Demo:** [Ecospace on Vercel](https://ecospace-eosin.vercel.app/)
 
 ---
 
