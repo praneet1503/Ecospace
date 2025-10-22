@@ -20,7 +20,7 @@ export default function WeatherCard() {
     async function fetchWeather() {
       try {
         setLoading(true)
-        const apiKey = "217c853cb167f26e23eb6d7a3699e276"
+        const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
         const city = 'dubai,UAE'
         const response = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
