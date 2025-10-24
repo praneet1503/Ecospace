@@ -1,0 +1,126 @@
+.section {
+  background: linear-gradient(135deg, var(--background), var(--surface));
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 5rem 2rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.header h2 {
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+.card {
+  position: relative;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--surface), var(--background));
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.card:hover .content {
+  background: linear-gradient(135deg, rgba(30, 136, 229, 0.05), rgba(67, 160, 71, 0.05));
+}
+
+.goalNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  opacity: 0.2;
+}
+
+.content h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.content p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .card {
+    height: 240px;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .goalNumber {
+    font-size: 2rem;
+  }
+
+  .content h3 {
+    font-size: 0.95rem;
+  }
+
+  .content p {
+    font-size: 0.75rem;
+  }
+}

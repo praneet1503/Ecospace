@@ -1,0 +1,124 @@
+.card {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+  color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  animation: fadeInUp 0.6s ease-out;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card.loading {
+  background: var(--surface);
+}
+
+.card.error {
+  background: rgba(255, 107, 107, 0.1);
+  color: var(--text-primary);
+  border: 2px solid rgba(255, 107, 107, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skeleton {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(90deg, var(--border-color), transparent, var(--border-color));
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 8px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.header h3 {
+  font-size: 1.25rem;
+  color: white;
+  margin: 0;
+}
+
+.location {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.mainWeather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tempDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.temp {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.feelsLike {
+  font-size: 0.875rem;
+  opacity: 0.85;
+}
+
+.iconWrapper {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.iconWrapper svg {
+  color: white;
+}
+
+.condition {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.75rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}

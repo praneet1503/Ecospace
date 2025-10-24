@@ -122,3 +122,5 @@ logs
 !.vscode/extensions.json
 .history/
 
+# Documentation
+docs/
