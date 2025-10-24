@@ -101,3 +101,38 @@
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
+.card.loading .value {
+  opacity: 0.6;
+}
+
+.card.error .value {
+  color: var(--error-color, #ff6b6b);
+}
+
+.card.loading .iconBox {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.errorText {
+  color: var(--error-color, #ff6b6b);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.lastUpdated {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

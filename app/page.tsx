@@ -9,65 +9,60 @@ import Footer from './components/Footer'
 export default function Home() {
   const metrics: Array<{
     title: string
-    value: number
-    unit: string
+    value?: string | number
+    unit?: string
     icon: string
     color: 'blue' | 'green' | 'yellow' | 'red'
     description: string
+    dataKey?: string
   }> = [
     {
       title: 'Air Quality Index',
-      value: 62,
-      unit: 'AQI US',
       icon: '💨',
       color: 'blue',
       description:
         'Air quality is measured by the concentration of pollutants such as PM2.5, PM10, and various gases. Lower values indicate cleaner, healthier air.',
+      dataKey: 'airQuality',
     },
     {
       title: 'CO₂ Emissions',
-      value: 417,
-      unit: 'ppm',
       icon: '🏭',
       color: 'red',
       description:
         'Global atmospheric CO₂ concentration is rising due to human activities like fossil fuel combustion. We need to reduce emissions to combat climate change.',
+      dataKey: 'co2Levels',
     },
     {
       title: 'Temperature Anomaly',
-      value: 1.2,
-      unit: '°C',
       icon: '🌡️',
       color: 'yellow',
       description:
-        'Global average temperature has risen 1.2°C above pre-industrial levels. The Paris Agreement aims to limit warming to 1.5°C.',
+        'Global average temperature has risen above pre-industrial levels. The Paris Agreement aims to limit warming to 1.5°C.',
+      dataKey: 'temperatureAnomaly',
     },
     {
       title: 'Forest Coverage',
-      value: 4.06,
-      unit: 'Billion hectares',
       icon: '🌲',
       color: 'green',
       description:
         'About 4.06 billion hectares of forest remain on Earth. Forests are critical for carbon storage, biodiversity, and climate regulation.',
+      dataKey: 'forestCoverage',
     },
     {
       title: 'Ocean Acidification',
-      value: 8.1,
-      unit: 'pH',
       icon: '🌊',
       color: 'blue',
       description:
-        'Ocean pH has decreased by 0.1 units since pre-industrial times, representing a 30% increase in acidity. This harms marine life.',
+        'Ocean pH has decreased since pre-industrial times, representing increased acidity. This harms marine life.',
+      dataKey: 'oceanAcidification',
     },
     {
       title: 'Renewable Energy',
-      value: 29,
-      unit: '% of global',
       icon: '⚡',
       color: 'green',
       description:
-        'Renewable energy now accounts for about 29% of global electricity generation. Expanding renewables is crucial for a sustainable future.',
+        'Renewable energy accounts for a portion of global electricity generation. Expanding renewables is crucial for a sustainable future.',
+      dataKey: 'renewableEnergy',
     },
   ]
 
