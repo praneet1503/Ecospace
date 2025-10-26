@@ -1,11 +1,32 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './Header.module.css'
 import ThemeToggle from './ThemeToggle'
 
+function getTimeOfDayGreeting(): string {
+  const hour = new Date().getHours()
+  
+  if (hour >= 5 && hour < 12) return 'Good morning'
+  if (hour >= 12 && hour < 17) return 'Good afternoon'
+  if (hour >= 17 && hour < 21) return 'Good evening'
+  return 'Good night'
+}
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [greeting, setGreeting] = useState('')
+
+  useEffect(() => {
+    setGreeting(getTimeOfDayGreeting())
+    
+    // Update greeting every minute
+    const interval = setInterval(() => {
+      setGreeting(getTimeOfDayGreeting())
+    }, 60000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   const navLinks = [
     { label: 'Weather', href: '#weather' },
@@ -23,7 +44,10 @@ export default function Header() {
             <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="2" />
             <path d="M16 4 C12 8 10 12 10 16 C10 22 13 26 16 26 C19 26 22 22 22 16 C22 12 20 8 16 4" fill="currentColor" opacity="0.3" />
           </svg>
-          <span className={styles.logoText}>Ecospace</span>
+          <div className={styles.logoContent}>
+            <span className={styles.logoText}>Ecospace</span>
+            {greeting && <span className={styles.greeting}>{greeting}! 👋</span>}
+          </div>
         </div>
 
         {/* Desktop Navigation */}

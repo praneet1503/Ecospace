@@ -87,6 +87,21 @@
 
 .iconWrapper svg {
   color: white;
+  animation: gentleSpin 8s linear infinite;
+}
+
+@keyframes gentleSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconWrapper {
+    animation: none;
+  }
+  .iconWrapper svg {
+    animation: none;
+  }
 }
 
 .condition {

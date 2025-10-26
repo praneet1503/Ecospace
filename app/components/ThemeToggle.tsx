@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import styles from './ThemeToggle.module.css'
+import { analyticsEvents } from '../../lib/analytics'
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(false)
@@ -18,6 +19,7 @@ export default function ThemeToggle() {
     setIsDark(!isDark)
     document.documentElement.setAttribute('data-theme', newTheme)
     localStorage.setItem('theme', newTheme)
+    analyticsEvents.themeToggled(newTheme)
   }
 
   if (!mounted) return <div className={styles.placeholder} />

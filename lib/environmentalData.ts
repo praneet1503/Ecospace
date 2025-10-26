@@ -108,3 +108,49 @@ export async function fetchRenewableEnergy(): Promise<EnvironmentalData> {
   // For now, using static data
   return { value: 29, unit: '% of global' }
 }
+
+// Weather data for Dubai using OpenWeatherMap API
+export interface WeatherData {
+  temp: number
+  humidity: number
+  condition: string
+  windSpeed: number
+  feelsLike: number
+}
+
+export async function fetchWeatherData(): Promise<WeatherData> {
+  try {
+    const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
+    if (!apiKey) {
+      throw new Error('OpenWeatherMap API key not configured')
+    }
+
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=Dubai,AE&units=metric&appid=${apiKey}`
+    )
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+
+    const data = await response.json()
+
+    return {
+      temp: Math.round(data.main.temp),
+      humidity: data.main.humidity,
+      condition: data.weather[0].description,
+      windSpeed: Math.round(data.wind.speed * 3.6), // Convert m/s to km/h
+      feelsLike: Math.round(data.main.feels_like)
+    }
+  } catch (error) {
+    console.error('Weather fetch error:', error)
+    // Fallback to static data
+    return {
+      temp: 28,
+      humidity: 60,
+      condition: 'Partly cloudy',
+      windSpeed: 15,
+      feelsLike: 30
+    }
+  }
+}

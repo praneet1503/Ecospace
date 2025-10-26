@@ -10,6 +10,8 @@ import {
   fetchOceanAcidification,
   fetchRenewableEnergy
 } from '../../lib/environmentalData'
+import { useToast } from '../context/ToastProvider'
+import { analyticsEvents } from '../../lib/analytics'
 
 interface MetricCardProps {
   title: string
@@ -45,10 +47,12 @@ export default function MetricCard({
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null)
+  const { showToast } = useToast()
 
   useEffect(() => {
     if (dataKey && dataFetchers[dataKey]) {
       const fetchData = async () => {
+        const startTime = Date.now()
         try {
           setLoading(true)
           setError(null)
@@ -56,8 +60,14 @@ export default function MetricCard({
           setValue(data.value)
           if (data.unit) setUnit(data.unit)
           setLastUpdated(new Date())
+          const duration = Date.now() - startTime
+          showToast(`${title} updated successfully`, 'success', 3000)
+          analyticsEvents.metricDataLoaded(title, duration)
         } catch (err: any) {
-          setError(err.message || 'Failed to fetch data')
+          const errorMsg = err.message || 'Failed to fetch data'
+          setError(errorMsg)
+          showToast(`Failed to update ${title}`, 'error', 4000)
+          analyticsEvents.dataLoadError(title, errorMsg)
         } finally {
           setLoading(false)
         }
@@ -65,7 +75,7 @@ export default function MetricCard({
 
       fetchData()
     }
-  }, [dataKey])
+  }, [dataKey, title, showToast])
 
   const displayValue = loading ? '...' : error ? 'N/A' : value
   const displayUnit = loading || error ? '' : unit
@@ -74,12 +84,26 @@ export default function MetricCard({
     <div className={`${styles.card} ${styles[`color-${color}`]} ${loading ? styles.loading : ''} ${error ? styles.error : ''}`}>
       <div
         className={styles.header}
-        onClick={() => setExpanded(!expanded)}
+        onClick={() => {
+          const newExpanded = !expanded
+          setExpanded(newExpanded)
+          if (newExpanded) {
+            analyticsEvents.metricExpanded(title)
+          } else {
+            analyticsEvents.metricCollapsed(title)
+          }
+        }}
         role="button"
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
-            setExpanded(!expanded)
+            const newExpanded = !expanded
+            setExpanded(newExpanded)
+            if (newExpanded) {
+              analyticsEvents.metricExpanded(title)
+            } else {
+              analyticsEvents.metricCollapsed(title)
+            }
           }
         }}
       >

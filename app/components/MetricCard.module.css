@@ -33,10 +33,29 @@
   cursor: pointer;
   user-select: none;
   transition: var(--transition);
+  position: relative;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(30, 136, 229, 0.03), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.header:hover::before {
+  opacity: 1;
 }
 
 .header:hover {
   background: var(--background);
+  transform: translateX(4px);
+}
+
+.header:active {
+  transform: translateX(2px) scale(0.99);
 }
 
 .iconBox {
@@ -92,7 +111,29 @@
 .content {
   padding: 0 1.5rem 1.5rem;
   border-top: 1px solid var(--border-color);
-  animation: slideInDown 0.3s ease-out;
+  animation: expandDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: top;
+}
+
+@keyframes expandDown {
+  from {
+    opacity: 0;
+    transform: scaleY(0.8) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    animation: fadeIn 0.2s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 }
 
 .content p {

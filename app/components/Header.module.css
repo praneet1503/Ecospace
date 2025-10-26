@@ -40,12 +40,42 @@
   transition: var(--transition);
 }
 
+.logoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
 .logoText {
   background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 700;
+}
+
+.greeting {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .greeting {
+    animation: none;
+  }
 }
 
 .nav {
