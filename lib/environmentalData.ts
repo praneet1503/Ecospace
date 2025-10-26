@@ -1,6 +1,6 @@
 // Environmental data service for fetching real-time metrics
 export interface EnvironmentalData {
-  value: number | string
+  value: number | string | null
   unit?: string
 }
 
@@ -26,8 +26,8 @@ export async function fetchAirQuality(): Promise<EnvironmentalData> {
     }
   } catch (error) {
     console.error('Air quality fetch error:', error)
-    // Fallback to static data
-    return { value: 62, unit: 'AQI US' }
+    // Return null when no real data is available
+    return { value: null, unit: 'AQI US' }
   }
 }
 
@@ -48,8 +48,8 @@ export async function fetchCO2Levels(): Promise<EnvironmentalData> {
     }
   } catch (error) {
     console.error('CO2 fetch error:', error)
-    // Fallback to static data
-    return { value: 417, unit: 'ppm' }
+    // Return null when no real data is available
+    return { value: null, unit: 'ppm' }
   }
 }
 
@@ -83,57 +83,69 @@ export async function fetchTemperatureAnomaly(): Promise<EnvironmentalData> {
     }
   } catch (error) {
     console.error('Temperature anomaly fetch error:', error)
-    // Fallback to static data
-    return { value: 1.2, unit: '°C' }
+    // Return null when no real data is available
+    return { value: null, unit: '°C' }
   }
 }
 
-// Forest coverage - using static data with occasional updates
+// Forest coverage - no real API available yet
 export async function fetchForestCoverage(): Promise<EnvironmentalData> {
   // This would ideally come from a forest monitoring API
-  // For now, using static data that could be updated periodically
-  return { value: 4.06, unit: 'Billion hectares' }
+  // For now, return null as no real data is available
+  return { value: null, unit: 'Billion hectares' }
 }
 
-// Ocean acidification - using static data
+// Ocean acidification - no real API available yet
 export async function fetchOceanAcidification(): Promise<EnvironmentalData> {
   // This would ideally come from ocean monitoring APIs
-  // For now, using static data
-  return { value: 8.1, unit: 'pH' }
+  // For now, return null as no real data is available
+  return { value: null, unit: 'pH' }
 }
 
-// Renewable energy percentage - using static data
+// Renewable energy percentage - no real API available yet
 export async function fetchRenewableEnergy(): Promise<EnvironmentalData> {
   // This would ideally come from energy statistics APIs
-  // For now, using static data
-  return { value: 29, unit: '% of global' }
+  // For now, return null as no real data is available
+  return { value: null, unit: '% of global' }
 }
 
 // Weather data for Dubai using OpenWeatherMap API
 export interface WeatherData {
-  temp: number
-  humidity: number
-  condition: string
-  windSpeed: number
-  feelsLike: number
+  temp: number | null
+  humidity: number | null
+  condition: string | null
+  windSpeed: number | null
+  feelsLike: number | null
 }
 
 export async function fetchWeatherData(): Promise<WeatherData> {
+  console.log('[SERVER] Weather API Debug - fetchWeatherData function called')
   try {
     const apiKey = process.env.NEXT_PRIVATE_OPENWEATHER_API_KEY
+    console.log('[SERVER] Weather API Debug - API Key configured:', !!apiKey)
+    console.log('[SERVER] Weather API Debug - API Key value (first 8 chars):', apiKey ? apiKey.substring(0, 8) + '...' : 'undefined')
     if (!apiKey) {
-      throw new Error('OpenWeatherMap API key not configured')
+      // Return null values when API key is not configured
+      return {
+        temp: null,
+        humidity: null,
+        condition: null,
+        windSpeed: null,
+        feelsLike: null
+      }
     }
 
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=Dubai,AE&units=metric&appid=${apiKey}`
     )
+    console.log('[SERVER] Weather API Debug - Response status:', response.status)
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
 
     const data = await response.json()
+    console.log('[SERVER] Weather API Debug - Response data received, temp:', data.main?.temp)
 
     return {
       temp: Math.round(data.main.temp),
@@ -144,13 +156,13 @@ export async function fetchWeatherData(): Promise<WeatherData> {
     }
   } catch (error) {
     console.error('Weather fetch error:', error)
-    // Fallback to static data
+    // Return null when no real data is available
     return {
-      temp: 28,
-      humidity: 60,
-      condition: 'Partly cloudy',
-      windSpeed: 15,
-      feelsLike: 30
+      temp: null,
+      humidity: null,
+      condition: null,
+      windSpeed: null,
+      feelsLike: null
     }
   }
 }

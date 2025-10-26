@@ -77,8 +77,8 @@ export default function MetricCard({
     }
   }, [dataKey, title, showToast])
 
-  const displayValue = loading ? '...' : error ? 'N/A' : value
-  const displayUnit = loading || error ? '' : unit
+  const displayValue = loading ? '...' : error ? 'nil' : value === null ? 'nil' : value
+  const displayUnit = loading || error || value === null ? '' : unit
 
   return (
     <div className={`${styles.card} ${styles[`color-${color}`]} ${loading ? styles.loading : ''} ${error ? styles.error : ''}`}>

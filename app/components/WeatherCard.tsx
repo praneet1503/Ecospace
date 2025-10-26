@@ -2,16 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import styles from './WeatherCard.module.css'
-import { fetchWeatherData } from '../../lib/environmentalData'
+import { WeatherData } from '../../lib/environmentalData'
 import { useToast } from '../context/ToastProvider'
-
-interface WeatherData {
-  temp: number
-  humidity: number
-  condition: string
-  windSpeed: number
-  feelsLike: number
-}
 
 export default function WeatherCard() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null)
@@ -24,7 +16,11 @@ export default function WeatherCard() {
       try {
         setLoading(true)
         setError(null)
-        const data = await fetchWeatherData()
+        const response = await fetch('/api/weather')
+        if (!response.ok) {
+          throw new Error('Failed to fetch weather data')
+        }
+        const data = await response.json()
         setWeatherData(data)
         showToast('Weather data loaded', 'success', 2500)
       } catch (err: any) {
@@ -64,8 +60,8 @@ export default function WeatherCard() {
 
       <div className={styles.mainWeather}>
         <div className={styles.tempDisplay}>
-          <span className={styles.temp}>{weatherData.temp}°C</span>
-          <span className={styles.feelsLike}>Feels like {weatherData.feelsLike}°C</span>
+          <span className={styles.temp}>{weatherData.temp ?? 'nil'}°C</span>
+          <span className={styles.feelsLike}>Feels like {weatherData.feelsLike ?? 'nil'}°C</span>
         </div>
         <div className={styles.iconWrapper}>
           <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
@@ -75,16 +71,16 @@ export default function WeatherCard() {
         </div>
       </div>
 
-      <p className={styles.condition}>{weatherData.condition}</p>
+      <p className={styles.condition}>{weatherData.condition ?? 'nil'}</p>
 
       <div className={styles.metrics}>
         <div className={styles.metric}>
           <span className={styles.label}>Humidity</span>
-          <span className={styles.value}>{weatherData.humidity}%</span>
+          <span className={styles.value}>{weatherData.humidity ?? 'nil'}%</span>
         </div>
         <div className={styles.metric}>
           <span className={styles.label}>Wind Speed</span>
-          <span className={styles.value}>{weatherData.windSpeed} km/h</span>
+          <span className={styles.value}>{weatherData.windSpeed ?? 'nil'} km/h</span>
         </div>
       </div>
     </div>
