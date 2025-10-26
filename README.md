@@ -283,10 +283,10 @@ To view analytics:
 Create a `.env.local` file for sensitive data (if needed):
 
 ```env
-NEXT_PUBLIC_OPENWEATHER_API_KEY=your_key_here
+NEXT_PRIVATE_OPENWEATHER_API_KEY=your_key_here
 ```
 
-**Note:** The current weather API key is public for demo purposes. Replace with your own for production.
+**Note:** The current weather API key is private for security. Replace with your own for production.
 
 ---
 

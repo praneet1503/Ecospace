@@ -7,7 +7,7 @@ export interface EnvironmentalData {
 // Air Quality Index from WAQI API
 export async function fetchAirQuality(): Promise<EnvironmentalData> {
   try {
-    const token = process.env.NEXT_PUBLIC_WAQI_TOKEN || 'demo'
+    const token = process.env.NEXT_PRIVATE_WAQI_TOKEN || 'demo'
     const response = await fetch(`https://api.waqi.info/feed/dubai/?token=${token}`)
 
     if (!response.ok) {
@@ -120,7 +120,7 @@ export interface WeatherData {
 
 export async function fetchWeatherData(): Promise<WeatherData> {
   try {
-    const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
+    const apiKey = process.env.NEXT_PRIVATE_OPENWEATHER_API_KEY
     if (!apiKey) {
       throw new Error('OpenWeatherMap API key not configured')
     }
