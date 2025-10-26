@@ -46,7 +46,12 @@ export default function Header() {
           </svg>
           <div className={styles.logoContent}>
             <span className={styles.logoText}>Ecospace</span>
-            {greeting && <span className={styles.greeting}>{greeting}! 👋</span>}
+            {greeting && (
+              <span className={styles.greeting}>
+                {greeting}!{' '}
+                <span role="img" aria-label="waving hand">👋</span>
+              </span>
+            )}
           </div>
         </div>
 
