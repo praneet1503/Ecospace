@@ -88,25 +88,31 @@ export async function fetchTemperatureAnomaly(): Promise<EnvironmentalData> {
   }
 }
 
-// Forest coverage - no real API available yet
+// Forest coverage - static baseline data
 export async function fetchForestCoverage(): Promise<EnvironmentalData> {
-  // This would ideally come from a forest monitoring API
-  // For now, return null as no real data is available
-  return { value: null, unit: 'Billion hectares' }
+  // Return static baseline data instead of null
+  return {
+    value: 4.06,
+    unit: 'Billion ha'
+  }
 }
 
-// Ocean acidification - no real API available yet
+// Ocean acidification - static baseline data
 export async function fetchOceanAcidification(): Promise<EnvironmentalData> {
-  // This would ideally come from ocean monitoring APIs
-  // For now, return null as no real data is available
-  return { value: null, unit: 'pH' }
+  // Return static baseline data instead of null
+  return {
+    value: 8.04,
+    unit: 'pH'
+  }
 }
 
-// Renewable energy percentage - no real API available yet
+// Renewable energy percentage - static baseline data
 export async function fetchRenewableEnergy(): Promise<EnvironmentalData> {
-  // This would ideally come from energy statistics APIs
-  // For now, return null as no real data is available
-  return { value: null, unit: '% of global' }
+  // Return static baseline data instead of null
+  return {
+    value: 4448,
+    unit: 'GW'
+  }
 }
 
 // Weather data for Dubai using OpenWeatherMap API

@@ -109,3 +109,57 @@
   font-weight: 600;
   font-size: 0.85rem;
 }
+
+/* New styles for v2 glass button and updated footer credits */
+.project {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.credit {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.copyRow {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.spacer {
+  margin: 0 0.4rem;
+  color: var(--text-secondary);
+}
+
+.v2Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  min-width: 44px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(135deg, rgba(67,160,71,0.12), rgba(30,136,229,0.12));
+  color: var(--text-primary);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: 0 6px 18px rgba(30,136,229,0.08), inset 0 1px 0 rgba(255,255,255,0.03);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms var(--transition), box-shadow 160ms var(--transition), opacity 160ms var(--transition);
+}
+
+.v2Button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 26px rgba(30,136,229,0.12), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.v2Button:focus {
+  outline: 2px solid rgba(30,136,229,0.15);
+  outline-offset: 2px;
+}

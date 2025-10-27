@@ -81,11 +81,13 @@ export default function Footer() {
         <div className={styles.divider} />
 
         <div className={styles.bottom}>
-          <p>
-            Created with <span className={styles.heart}>❤️</span> by Praneet Nandan Rana
-          </p>
-          <p>
-            © {currentYear} Ecospace • v2.0 • <span className={styles.badge}>Built with Next.js 15 + React 18</span>
+          <p className={styles.project}>The First Project of Elysium</p>
+          <p className={styles.credit}>Made with ❤️ by Praneet</p>
+
+          <p className={styles.copyRow}>
+            © {currentYear} Ecospace
+            <span className={styles.spacer}>•</span>
+            <button className={styles.v2Button} aria-label="Version 2">v2</button>
           </p>
         </div>
       </div>
