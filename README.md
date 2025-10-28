@@ -14,6 +14,7 @@ A modern, responsive, and visually appealing educational website about sustainab
 - Responsive design for desktop, tablet, and mobile
 - Light/Dark mode toggle with persistent preferences
 - Accessibility-first approach with ARIA labels and focus states
+- **NEW:** Emotional design enhancements including microinteractions, toast notifications, confetti celebrations, and personalized greetings
 
 ### 📦 **Modular Component Architecture**
 - Reusable React components with CSS Modules
@@ -56,7 +57,18 @@ A modern, responsive, and visually appealing educational website about sustainab
 ### 📊 **Analytics**
 - Vercel Analytics integrated for tracking usage
 - Real-time insights available in Vercel dashboard
+- **NEW:** Custom event tracking for all user interactions (CTA clicks, metric expansions, scroll depth, time on page, theme toggles, and more)
 - Environment-based conditional rendering
+
+### 🎉 **Emotional Design Features** *(NEW)*
+- **Microinteractions:** Heartbeat animations on CTA buttons, spring-based card expansions, gentle icon rotations
+- **Toast Notifications:** Real-time feedback for data loading, errors, and user actions
+- **Confetti Celebration:** Particle animation on primary CTA click
+- **Personalized Greetings:** Time-based greetings (Good morning/afternoon/evening/night)
+- **Empty States:** Friendly illustrations and helpful messaging when data is unavailable
+- **Custom 404 Page:** Playful "lost in space" theme with quick navigation links
+- **Warm Copy:** Empowering, human language throughout ("Discover Our Living Planet" vs "Welcome to Ecospace")
+- **Accessibility:** All animations respect `prefers-reduced-motion`, full keyboard navigation, ARIA labels
 
 ---
 
@@ -77,27 +89,44 @@ A modern, responsive, and visually appealing educational website about sustainab
 ```
 app/
 ├── layout.tsx              # Root layout with metadata, theme provider, analytics
-├── page.tsx                # Home page with all sections
+├── page.tsx                # Home page with all sections + confetti
 ├── globals.css             # Global styles and CSS variables
-├── page.module.css         # Home page styles
+├── page.module.css         # Home page styles + microinteractions
+├── not-found.tsx           # Custom 404 page (NEW)
+├── not-found.module.css    # 404 page styling (NEW)
+├── context/
+│   └── ToastProvider.tsx   # Global toast notification context (NEW)
 └── components/
-    ├── Header.tsx          # Navigation header with logo and theme toggle
+    ├── Header.tsx          # Navigation with personalized greeting (UPDATED)
     ├── Header.module.css
     ├── ThemeProvider.tsx   # Theme context and persistence logic
-    ├── ThemeToggle.tsx      # Dark/light mode button
+    ├── ThemeToggle.tsx     # Dark/light mode button + analytics (UPDATED)
     ├── ThemeToggle.module.css
-    ├── WeatherCard.tsx      # Live weather display with API data
+    ├── WeatherCard.tsx     # Live weather + toast notifications (UPDATED)
     ├── WeatherCard.module.css
-    ├── MetricCard.tsx       # Expandable metric cards with descriptions
+    ├── MetricCard.tsx      # Expandable cards + analytics (UPDATED)
     ├── MetricCard.module.css
-    ├── SDGSection.tsx       # Grid of 17 SDG goals with animations
+    ├── SDGSection.tsx      # Grid of 17 SDG goals with animations
     ├── SDGSection.module.css
-    ├── COP28Section.tsx     # Tabbed climate conference information
+    ├── COP28Section.tsx    # Tabbed climate conference information
     ├── COP28Section.module.css
-    ├── Footer.tsx           # Footer with links, credits, and social
+    ├── Toast.tsx           # Toast notification component (NEW)
+    ├── Toast.module.css
+    ├── EmptyState.tsx      # Empty state component (NEW)
+    ├── EmptyState.module.css
+    ├── Confetti.tsx        # Canvas-based confetti animation (NEW)
+    ├── Footer.tsx          # Footer with links, credits, and social
     └── Footer.module.css
+lib/
+├── environmentalData.ts    # API fetchers with weather data (UPDATED)
+└── analytics.ts            # Custom analytics event tracking (NEW)
 public/
+├── illustrations/
+│   ├── empty-state.svg     # Empty state illustration (NEW)
+│   └── 404.svg             # 404 page illustration (NEW)
 └── Ecospace.ico            # Favicon
+docs/
+└── EMOTIONAL_DESIGN_SUMMARY.md  # Detailed implementation guide (NEW)
 ```
 
 ---
@@ -254,10 +283,10 @@ To view analytics:
 Create a `.env.local` file for sensitive data (if needed):
 
 ```env
-NEXT_PUBLIC_OPENWEATHER_API_KEY=your_key_here
+NEXT_PRIVATE_OPENWEATHER_API_KEY=your_key_here
 ```
 
-**Note:** The current weather API key is public for demo purposes. Replace with your own for production.
+**Note:** The current weather API key is private for security. Replace with your own for production.
 
 ---
 

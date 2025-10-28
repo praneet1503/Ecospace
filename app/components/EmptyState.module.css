@@ -1,0 +1,122 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 300px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 2px dashed var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.illustration {
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content {
+  max-width: 400px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.2s forwards;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.message {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.actionButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(30, 136, 229, 0.2);
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 136, 229, 0.3);
+}
+
+.actionButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(30, 136, 229, 0.2);
+}
+
+.actionButton:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .illustration,
+  .content {
+    animation: none;
+    opacity: 1;
+  }
+
+  .container:hover,
+  .actionButton:hover {
+    transform: none;
+  }
+
+  .actionButton:active {
+    transform: none;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 3rem 1.5rem;
+    min-height: 250px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .message {
+    font-size: 0.9rem;
+  }
+
+  .actionButton {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}

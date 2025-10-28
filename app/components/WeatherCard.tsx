@@ -2,47 +2,38 @@
 
 import { useEffect, useState } from 'react'
 import styles from './WeatherCard.module.css'
-
-interface WeatherData {
-  temp: number
-  humidity: number
-  condition: string
-  windSpeed: number
-  feelsLike: number
-}
+import { WeatherData } from '../../lib/environmentalData'
+import { useToast } from '../context/ToastProvider'
 
 export default function WeatherCard() {
-  const [weather, setWeather] = useState<WeatherData | null>(null)
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<string | null>(null)
+  const { showToast } = useToast()
 
-  useEffect(() => {
-    async function fetchWeather() {
+    useEffect(() => {
+    const fetchWeather = async () => {
       try {
         setLoading(true)
-        const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
-        const city = 'dubai,UAE'
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-        )
-        if (!response.ok) throw new Error('Failed to fetch weather')
+        setError(null)
+        const response = await fetch('/api/weather')
+        if (!response.ok) {
+          throw new Error('Failed to fetch weather data')
+        }
         const data = await response.json()
-        setWeather({
-          temp: Math.round(data.main.temp),
-          humidity: data.main.humidity,
-          condition: data.weather[0].main,
-          windSpeed: Math.round(data.wind.speed),
-          feelsLike: Math.round(data.main.feels_like),
-        })
+        setWeatherData(data)
+        showToast('Weather data loaded', 'success', 2500)
       } catch (err: any) {
-        setError(err.message)
+        const errorMsg = err.message || 'Failed to fetch weather data'
+        setError(errorMsg)
+        showToast(errorMsg, 'error', 4000)
       } finally {
         setLoading(false)
       }
     }
 
     fetchWeather()
-  }, [])
+  }, [showToast])
 
   if (loading) {
     return (
@@ -52,7 +43,7 @@ export default function WeatherCard() {
     )
   }
 
-  if (error || !weather) {
+  if (error || !weatherData) {
     return (
       <div className={styles.card + ' ' + styles.error}>
         <p>Unable to fetch weather data</p>
@@ -69,8 +60,8 @@ export default function WeatherCard() {
 
       <div className={styles.mainWeather}>
         <div className={styles.tempDisplay}>
-          <span className={styles.temp}>{weather.temp}°C</span>
-          <span className={styles.feelsLike}>Feels like {weather.feelsLike}°C</span>
+          <span className={styles.temp}>{weatherData.temp ?? 'nil'}°C</span>
+          <span className={styles.feelsLike}>Feels like {weatherData.feelsLike ?? 'nil'}°C</span>
         </div>
         <div className={styles.iconWrapper}>
           <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
@@ -80,16 +71,16 @@ export default function WeatherCard() {
         </div>
       </div>
 
-      <p className={styles.condition}>{weather.condition}</p>
+      <p className={styles.condition}>{weatherData.condition ?? 'nil'}</p>
 
       <div className={styles.metrics}>
         <div className={styles.metric}>
           <span className={styles.label}>Humidity</span>
-          <span className={styles.value}>{weather.humidity}%</span>
+          <span className={styles.value}>{weatherData.humidity ?? 'nil'}%</span>
         </div>
         <div className={styles.metric}>
           <span className={styles.label}>Wind Speed</span>
-          <span className={styles.value}>{weather.windSpeed} km/h</span>
+          <span className={styles.value}>{weatherData.windSpeed ?? 'nil'} km/h</span>
         </div>
       </div>
     </div>
