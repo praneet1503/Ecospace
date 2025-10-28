@@ -1,0 +1,29 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="150" cy="150" r="130" fill="#F5F5F5" opacity="0.3"/>
+  
+  <!-- Lost planet/Earth -->
+  <circle cx="150" cy="130" r="60" fill="#4CAF50" opacity="0.3"/>
+  <path d="M 130 110 Q 150 100 170 110 Q 180 120 170 130 Q 150 140 130 130 Q 120 120 130 110" fill="#2196F3" opacity="0.4"/>
+  <circle cx="145" cy="125" r="8" fill="#43A047" opacity="0.5"/>
+  <circle cx="160" cy="135" r="6" fill="#43A047" opacity="0.5"/>
+  
+  <!-- Confused astronaut -->
+  <ellipse cx="150" cy="210" rx="25" ry="30" fill="#1E88E5" opacity="0.2"/>
+  <circle cx="150" cy="200" r="20" fill="#E3F2FD" stroke="#1E88E5" stroke-width="2"/>
+  <circle cx="145" cy="195" r="3" fill="#1E88E5"/>
+  <circle cx="155" cy="195" r="3" fill="#1E88E5"/>
+  <path d="M 142 205 Q 150 208 158 205" stroke="#1E88E5" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Floating "404" numbers -->
+  <text x="80" y="60" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1E88E5" opacity="0.4">4</text>
+  <text x="180" y="70" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#43A047" opacity="0.4">0</text>
+  <text x="130" y="250" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#F9A825" opacity="0.4">4</text>
+  
+  <!-- Stars/sparkles -->
+  <circle cx="60" cy="80" r="2" fill="#1E88E5" opacity="0.6"/>
+  <circle cx="230" cy="100" r="2" fill="#43A047" opacity="0.6"/>
+  <circle cx="90" cy="180" r="2" fill="#F9A825" opacity="0.6"/>
+  <circle cx="210" cy="160" r="2" fill="#1E88E5" opacity="0.6"/>
+  <circle cx="200" cy="220" r="2" fill="#43A047" opacity="0.6"/>
+</svg>
