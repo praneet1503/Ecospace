@@ -185,13 +185,16 @@ local-*/
 # Sentry
 .sentryclirc
 
-# Documentation (if you want to keep docs in the repo, remove this line)
-# docs/
+# Documentation
+docs/
 
 # Database files
 *.db
 *.sqlite
 *.sqlite3
+
+# SVG illustrations (if generated or not needed in commits)
+public/illustrations/*.svg
 
 # Terraform
 *.tfstate
