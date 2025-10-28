@@ -1,0 +1,179 @@
+.card {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: var(--transition);
+  border-left: 4px solid var(--primary-blue);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.card.color-green {
+  border-left-color: var(--primary-green);
+}
+
+.card.color-yellow {
+  border-left-color: var(--accent-yellow);
+}
+
+.card.color-red {
+  border-left-color: #ff6b6b;
+}
+
+.header {
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition);
+  position: relative;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(30, 136, 229, 0.03), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.header:hover::before {
+  opacity: 1;
+}
+
+.header:hover {
+  background: var(--background);
+  transform: translateX(4px);
+}
+
+.header:active {
+  transform: translateX(2px) scale(0.99);
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+  color: white;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+}
+
+.headerText {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.value {
+  margin: 0.25rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.unit {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  transition: transform 0.3s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.content {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  animation: expandDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: top;
+}
+
+@keyframes expandDown {
+  from {
+    opacity: 0;
+    transform: scaleY(0.8) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    animation: fadeIn 0.2s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+.content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.card.loading .value {
+  opacity: 0.6;
+}
+
+.card.error .value {
+  color: var(--error-color, #ff6b6b);
+}
+
+.card.loading .iconBox {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.errorText {
+  color: var(--error-color, #ff6b6b);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.lastUpdated {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

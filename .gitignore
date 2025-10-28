@@ -5,14 +5,22 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
 
 # Next.js
 .next/
 out/
 build/
+.cache/
 
 # Production
 dist/
+.build/
 
 # Runtime data
 pids
@@ -20,30 +28,20 @@ pids
 *.seed
 *.pid.lock
 
-# Coverage directory used by tools like istanbul
+# Testing
 coverage/
 *.lcov
-
-# nyc test coverage
 .nyc_output
+test-results/
+playwright-report/
+playwright/.cache/
+__snapshots__/
+.pytest_cache/
 
-# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
-# Bower dependency directory (https://bower.io/)
-bower_components
-
-# node-waf configuration
-.lock-wscript
-
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
-
-# Dependency directories
-jspm_packages/
-
-# TypeScript cache
+# TypeScript
 *.tsbuildinfo
+next-env.d.ts
+*.tsbuildinfo.*
 
 # Optional npm cache directory
 .npm
@@ -60,65 +58,155 @@ jspm_packages/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# Environment variables (IMPORTANT: Keep API keys and secrets safe!)
 .env
 .env.local
+.env.*.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env.production
+.env.development
+.env.test
 
-# parcel-bundler cache (https://parceljs.org/)
+# Parcel bundler cache
 .cache
 .parcel-cache
-
-# Next.js build output
-.next
-
-# Nuxt.js build / generate output
-.nuxt
-dist
-
-# Gatsby files
-.cache/
-public
 
 # Storybook build outputs
 .out
 .storybook-out
+storybook-static
 
 # Temporary folders
 tmp/
 temp/
+*.tmp
+*.temp
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*.swn
+*.swm
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+.vscode-test
+.history/
 
 # OS generated files
-Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 ehthumbs.db
+Thumbs.db
 Desktop.ini
+$RECYCLE.BIN/
 
 # Logs
-logs
+logs/
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
 
 # Vercel
 .vercel
+.vercel.json
 
-# Turbo
+# Turbopack / Turborepo
 .turbo
+.turbopack
 
+# Serverless
+.serverless/
 
-# extra 
-.vscode/launch.json
-!.vscode/extensions.json
-.history/
+# FuseBox cache
+.fusebox/
 
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Temporary files
+*.bak
+*.backup
+*.old
+*~
+
+# Lock files (optional - uncomment if you want to ignore them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Build artifacts
+*.map
+*.map.js
+
+# Debug files
+debug.log
+*.debug
+
+# Local development files
+.local
+local-*/
+
+# Sentry
+.sentryclirc
+
+# Documentation
+docs/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# SVG illustrations (if generated or not needed in commits)
+public/illustrations/*.svg
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Misc
+.netlify
+.firebase/
+.firebaserc
+firebase-debug.log*

@@ -10,15 +10,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^15.0.0",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
+    "next": "^16.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@types/node": "24.9.1",
+    "@types/react": "19.2.2",
     "eslint": "^8.0.0",
     "eslint-config-next": "^15.0.0"
   },
-  "keywords": ["sustainability", "environment", "nextjs"],
+  "keywords": [
+    "sustainability",
+    "environment",
+    "nextjs"
+  ],
   "author": "Praneet Nandan Rana",
   "license": "MIT"
 }
