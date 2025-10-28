@@ -17,12 +17,13 @@ export default function Home() {
 
   // Track scroll depth
   useEffect(() => {
-    let maxScroll = 0
+    let maxScrollBucket = 0
     const handleScroll = () => {
       const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
-      if (scrollPercentage > maxScroll && scrollPercentage % 25 === 0) {
-        maxScroll = scrollPercentage
-        analyticsEvents.scrollDepth(Math.round(scrollPercentage))
+      const currentBucket = Math.floor(scrollPercentage / 25)
+      if (currentBucket > maxScrollBucket) {
+        maxScrollBucket = currentBucket
+        analyticsEvents.scrollDepth(currentBucket * 25)
       }
     }
 
