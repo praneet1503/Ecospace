@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import styles from './WeatherCard.module.css'
-import { WeatherData } from '../../lib/environmentalData'
+import { WeatherData, NULL_WEATHER_DATA } from '../../lib/environmentalData'
 import { useToast } from '../context/ToastProvider'
 
 export default function WeatherCard() {
@@ -11,17 +11,45 @@ export default function WeatherCard() {
   const [error, setError] = useState<string | null>(null)
   const { showToast } = useToast()
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchWeather = async () => {
       try {
         setLoading(true)
         setError(null)
-        const response = await fetch('/api/weather')
+        
+        // Fetch weather data directly from OpenWeatherMap API
+        // SECURITY NOTE: For static GitHub Pages deployment, API keys must be public (NEXT_PUBLIC_*)
+        // This is a trade-off of static site generation. The API key will be visible in the browser.
+        // To mitigate risks:
+        // 1. Use API keys with rate limiting enabled
+        // 2. Restrict API key usage to specific domains in OpenWeatherMap dashboard
+        // 3. Use the free tier which has built-in rate limits
+        // 4. For server-side deployment (e.g., Vercel), use NEXT_PRIVATE_* variables instead
+        const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
+        
+        if (!apiKey) {
+          // Show fallback data when API key is not configured
+          setWeatherData(NULL_WEATHER_DATA)
+          setLoading(false)
+          return
+        }
+
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=Dubai,AE&units=metric&appid=${apiKey}`
+        )
+        
         if (!response.ok) {
           throw new Error('Failed to fetch weather data')
         }
+        
         const data = await response.json()
-        setWeatherData(data)
+        setWeatherData({
+          temp: Math.round(data.main.temp),
+          humidity: data.main.humidity,
+          condition: data.weather[0].description,
+          windSpeed: Math.round(data.wind.speed * 3.6), // Convert m/s to km/h
+          feelsLike: Math.round(data.main.feels_like)
+        })
         showToast('Weather data loaded', 'success', 2500)
       } catch (err: any) {
         const errorMsg = err.message || 'Failed to fetch weather data'
