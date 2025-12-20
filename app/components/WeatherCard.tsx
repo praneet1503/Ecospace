@@ -18,8 +18,13 @@ export default function WeatherCard() {
         setError(null)
         
         // Fetch weather data directly from OpenWeatherMap API
-        // Note: In production, API keys should be handled securely
-        // For static export/GitHub Pages, we'll show fallback data if API key is not available
+        // SECURITY NOTE: For static GitHub Pages deployment, API keys must be public (NEXT_PUBLIC_*)
+        // This is a trade-off of static site generation. The API key will be visible in the browser.
+        // To mitigate risks:
+        // 1. Use API keys with rate limiting enabled
+        // 2. Restrict API key usage to specific domains in OpenWeatherMap dashboard
+        // 3. Use the free tier which has built-in rate limits
+        // 4. For server-side deployment (e.g., Vercel), use NEXT_PRIVATE_* variables instead
         const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
         
         if (!apiKey) {

@@ -280,13 +280,24 @@ To view analytics:
 
 ## 🌍 **Environment Variables**
 
-Create a `.env.local` file for sensitive data (if needed):
+Create a `.env.local` file for sensitive data:
 
 ```env
+# For Vercel or server-side deployment (secure, not exposed to client):
 NEXT_PRIVATE_OPENWEATHER_API_KEY=your_key_here
+
+# For GitHub Pages static export (exposed to client, use with restrictions):
+NEXT_PUBLIC_OPENWEATHER_API_KEY=your_key_here
 ```
 
-**Note:** The current weather API key is private for security. Replace with your own for production.
+**Important Notes:**
+- **Server-side deployment (Vercel):** Use `NEXT_PRIVATE_OPENWEATHER_API_KEY` - this keeps the API key secure on the server
+- **GitHub Pages deployment:** Use `NEXT_PUBLIC_OPENWEATHER_API_KEY` - this makes the key visible in the browser
+  - ⚠️ The API key will be publicly accessible in the browser
+  - Configure domain restrictions in your OpenWeatherMap API key settings
+  - Use the free tier with built-in rate limits
+  - Monitor usage to prevent abuse
+- **Fallback behavior:** If no API key is configured, the weather widget will show null values gracefully
 
 ---
 
