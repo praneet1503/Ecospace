@@ -124,6 +124,15 @@ export interface WeatherData {
   feelsLike: number | null
 }
 
+// Default/null weather data structure
+export const NULL_WEATHER_DATA: WeatherData = {
+  temp: null,
+  humidity: null,
+  condition: null,
+  windSpeed: null,
+  feelsLike: null
+}
+
 export async function fetchWeatherData(): Promise<WeatherData> {
   console.log('[SERVER] Weather API Debug - fetchWeatherData function called')
   try {
@@ -132,13 +141,7 @@ export async function fetchWeatherData(): Promise<WeatherData> {
     console.log('[SERVER] Weather API Debug - API Key value (first 8 chars):', apiKey ? apiKey.substring(0, 8) + '...' : 'undefined')
     if (!apiKey) {
       // Return null values when API key is not configured
-      return {
-        temp: null,
-        humidity: null,
-        condition: null,
-        windSpeed: null,
-        feelsLike: null
-      }
+      return NULL_WEATHER_DATA
     }
 
     const response = await fetch(
@@ -163,12 +166,6 @@ export async function fetchWeatherData(): Promise<WeatherData> {
   } catch (error) {
     console.error('Weather fetch error:', error)
     // Return null when no real data is available
-    return {
-      temp: null,
-      humidity: null,
-      condition: null,
-      windSpeed: null,
-      feelsLike: null
-    }
+    return NULL_WEATHER_DATA
   }
 }

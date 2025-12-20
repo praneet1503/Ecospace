@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import styles from './WeatherCard.module.css'
-import { WeatherData } from '../../lib/environmentalData'
+import { WeatherData, NULL_WEATHER_DATA } from '../../lib/environmentalData'
 import { useToast } from '../context/ToastProvider'
 
 export default function WeatherCard() {
@@ -29,13 +29,7 @@ export default function WeatherCard() {
         
         if (!apiKey) {
           // Show fallback data when API key is not configured
-          setWeatherData({
-            temp: null,
-            humidity: null,
-            condition: null,
-            windSpeed: null,
-            feelsLike: null
-          })
+          setWeatherData(NULL_WEATHER_DATA)
           setLoading(false)
           return
         }
