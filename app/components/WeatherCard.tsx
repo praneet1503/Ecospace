@@ -11,17 +11,46 @@ export default function WeatherCard() {
   const [error, setError] = useState<string | null>(null)
   const { showToast } = useToast()
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchWeather = async () => {
       try {
         setLoading(true)
         setError(null)
-        const response = await fetch('/api/weather')
+        
+        // Fetch weather data directly from OpenWeatherMap API
+        // Note: In production, API keys should be handled securely
+        // For static export/GitHub Pages, we'll show fallback data if API key is not available
+        const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
+        
+        if (!apiKey) {
+          // Show fallback data when API key is not configured
+          setWeatherData({
+            temp: null,
+            humidity: null,
+            condition: null,
+            windSpeed: null,
+            feelsLike: null
+          })
+          setLoading(false)
+          return
+        }
+
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=Dubai,AE&units=metric&appid=${apiKey}`
+        )
+        
         if (!response.ok) {
           throw new Error('Failed to fetch weather data')
         }
+        
         const data = await response.json()
-        setWeatherData(data)
+        setWeatherData({
+          temp: Math.round(data.main.temp),
+          humidity: data.main.humidity,
+          condition: data.weather[0].description,
+          windSpeed: Math.round(data.wind.speed * 3.6), // Convert m/s to km/h
+          feelsLike: Math.round(data.main.feels_like)
+        })
         showToast('Weather data loaded', 'success', 2500)
       } catch (err: any) {
         const errorMsg = err.message || 'Failed to fetch weather data'
